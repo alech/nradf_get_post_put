@@ -42,25 +42,25 @@ xdp =<<'XEOF'
 					<text>nradf FormCalc Get/Post/Put methods playground v0.1</text>
 				</value>
 			</draw>
-			<field h="12pt" name="url" w="200pt" x="50pt" y="50pt">
+			<field h="12pt" name="geturl" w="200pt" x="60pt" y="50pt">
 				<font typeface="Helvetica" size="12pt"/>
 				<ui><textEdit/></ui>
 				<value>
 					<text>http://localhost</text>
 				</value>
 			</field>
-			<field h="400pt" name="urlcontent" w="250pt" x="5pt" y="100pt">
+			<field h="450pt" name="geturlcontent" w="250pt" x="10pt" y="100pt">
 				<ui>
 					<textEdit>
 						<margin leftInset="1mm" rightInset="1mm" topInset="1mm" bottomInset="1mm"/>
 					</textEdit>
 				</ui>
-				<font typeface="Helvetica" size="8pt"/>
+				<font typeface="Courier" size="8pt"/>
 			</field>
 			<field x="20pt" y="50pt" name="getbutton">
 				<event activity="click" name="getbuttonclick">
 					<script contentType="application/x-formcalc">
-						$form.mainform.urlcontent.rawValue = Get($form.mainform.url.rawValue);
+						$form.mainform.geturlcontent.rawValue = Get($form.mainform.geturl.rawValue);
 					</script>
 				</event>
 				<ui>
@@ -77,7 +77,7 @@ xdp =<<'XEOF'
 					<margin leftInset="-3mm" rightInset="-3mm" topInset="-1mm" bottomInset="-1mm"/>
 					<edge stroke="raised"/>
 					<fill>
-						<color value="200,200,255"/>
+						<color value="200,200,200"/>
 					</fill>
 				</border>
 			</field>
@@ -87,10 +87,6 @@ xdp =<<'XEOF'
 XEOF
 xfa_form = pdf.create_xfa_form(xdp)
 
-#js = Action::JavaScript.new("app.alert(\"foo\")")
-#pdf.onDocumentOpen(js)
-
 page = Page.new(:MediaBox => Rectangle[ :llx => 0, :lly => 0, :urx => WIDTH, :ury => HEIGHT]).setContents(contents)
-#page.add_font(Name.new('F1'), Font::Type1::Standard::Helvetica.new())
 pdf.append_page(page)
 pdf.save(OUTPUTFILE)
