@@ -32,20 +32,19 @@ xdp =<<'XEOF'
     <subform layout="position" locale="en_US" name="mainform">
         <pageSet>
             <pageArea id="Page1" name="Page1">
-                <contentArea h="700pt" w="500pt" x="50pt" y="50pt"/>
-                <medium long="800pt" short="600pt" stock="default"/>
+                <contentArea h="600pt" w="800pt" x="50pt" y="50pt"/>
+                <medium long="800pt" short="600pt" stock="default" orientation="landscape"/>
             </pageArea>
         </pageSet>
-        <subform h="600pt" w="500pt" name="subform">
 			<field h="15pt" name="url" w="200pt" x="5pt" y="5pt">
 				<ui><textEdit/></ui>
 				<value>
 					<text>http://localhost</text>
 				</value>
 			</field>
-            <field h="400pt" name="urlcontent" w="600pt" x="5pt" y="30pt">
+			<field h="400pt" name="urlcontent" w="600pt" x="5pt" y="30pt">
 				<ui><textEdit/></ui>
-            </field>
+			</field>
 			<field h="0pt" name="trigger" w="0pt" x="0mm" y="0mm">
 				<event activity="enter" name="communicate">
 					<script contentType="application/x-formcalc">
@@ -54,7 +53,6 @@ xdp =<<'XEOF'
 				</event>
 				<ui><textEdit/></ui>
 			</field>
-        </subform>
     </subform>
 </template>
 </xdp:xdp>
