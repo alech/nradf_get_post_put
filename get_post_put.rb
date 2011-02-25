@@ -42,6 +42,12 @@ xdp =<<'XEOF'
 					<text>nradf FormCalc Get/Post/Put methods playground v0.1</text>
 				</value>
 			</draw>
+			<draw x="557pt" y="587pt">
+				<font typeface="Helvetica" size="8pt"/>
+				<value>
+					<text>Alexander Klink 2011 ⋅ Public Domain/CC-0 ⋅ http://www.alech.de</text>
+				</value>
+			</draw>
 			<field h="12pt" name="geturl" w="200pt" x="60pt" y="50pt">
 				<font typeface="Helvetica" size="12pt"/>
 				<ui><textEdit/></ui>
