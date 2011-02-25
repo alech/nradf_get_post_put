@@ -10,8 +10,8 @@ HEIGHT = 600
 pdf = PDF.new
 
 contents = ContentStream.new
-#contents.write "FormCalc Get() method",
-#	:x => 20, :y => HEIGHT-40, :rendering => Text::Rendering::FILL, :size => 30
+contents.write "If you can read this, you need a PDF viewer with XFA support (i.e. Adobe Reader).",
+	:x => 20, :y => HEIGHT-40, :rendering => Text::Rendering::FILL, :size => 16
 
 xdp =<<'XEOF'
 <?xml version="1.0" encoding="UTF-8"?>
@@ -36,7 +36,7 @@ xdp =<<'XEOF'
                 <medium long="800pt" short="600pt" stock="default" orientation="landscape"/>
             </pageArea>
         </pageSet>
-			<draw x="10pt" y="10pt">
+			<draw x="12pt" y="12pt">
 				<font typeface="Helvetica" size="16pt"/>
 				<value>
 					<text>nradf FormCalc Get/Post/Put methods playground v0.1</text>
@@ -50,7 +50,7 @@ xdp =<<'XEOF'
 			</draw>
 
 			<!-- Get() -->
-			<field h="12pt" name="geturl" w="200pt" x="60pt" y="50pt">
+			<field h="12pt" name="geturl" w="200pt" x="62pt" y="50pt">
 				<font typeface="Helvetica" size="12pt"/>
 				<ui><textEdit/></ui>
 				<value>
@@ -58,7 +58,7 @@ xdp =<<'XEOF'
 				</value>
 				<para vAlign="middle"/>
 			</field>
-			<field h="505pt" name="geturlcontent" w="250pt" x="10pt" y="70pt">
+			<field h="505pt" name="geturlcontent" w="250pt" x="12pt" y="70pt">
 				<ui>
 					<textEdit>
 						<margin leftInset="1mm" rightInset="1mm" topInset="1mm" bottomInset="1mm"/>
@@ -66,7 +66,7 @@ xdp =<<'XEOF'
 				</ui>
 				<font typeface="Courier" size="8pt"/>
 			</field>
-			<field x="20pt" y="50pt" name="getbutton">
+			<field x="22pt" y="50pt" name="getbutton">
 				<event activity="click" name="getbuttonclick">
 					<script contentType="application/x-formcalc">
 						$form.mainform.geturlcontent.rawValue = Get($form.mainform.geturl.rawValue);
@@ -92,7 +92,7 @@ xdp =<<'XEOF'
 			</field>
 
 			<!-- Post() -->
-			<field h="12pt" name="posturl" w="200pt" x="323pt" y="50pt">
+			<field h="12pt" name="posturl" w="200pt" x="325pt" y="50pt">
 				<font typeface="Helvetica" size="12pt"/>
 				<ui><textEdit/></ui>
 				<value>
@@ -100,14 +100,14 @@ xdp =<<'XEOF'
 				</value>
 				<para vAlign="middle"/>
 			</field>
-			<field h="20pt" name="postdata" w="250pt" x="273pt" y="70pt">
+			<field h="20pt" name="postdata" w="250pt" x="275pt" y="70pt">
 				<font typeface="Courier" size="8pt"/>
 				<ui><textEdit/></ui>
 				<value>
 					<text>POST data</text>
 				</value>
 			</field>
-			<field h="10pt" name="postcontenttype" w="250pt" x="273pt" y="95pt">
+			<field h="10pt" name="postcontenttype" w="250pt" x="275pt" y="95pt">
 				<font typeface="Courier" size="8pt"/>
 				<ui><textEdit/></ui>
 				<value>
@@ -115,7 +115,7 @@ xdp =<<'XEOF'
 				</value>
 				<para vAlign="middle"/>
 			</field>
-			<field h="10pt" name="postcharset" w="250pt" x="273pt" y="110pt">
+			<field h="10pt" name="postcharset" w="250pt" x="275pt" y="110pt">
 				<font typeface="Courier" size="8pt"/>
 				<ui><textEdit/></ui>
 				<value>
@@ -123,14 +123,14 @@ xdp =<<'XEOF'
 				</value>
 				<para vAlign="middle"/>
 			</field>
-			<field h="20pt" name="postheader" w="250pt" x="273pt" y="125pt">
+			<field h="20pt" name="postheader" w="250pt" x="275pt" y="125pt">
 				<font typeface="Courier" size="8pt"/>
 				<ui><textEdit/></ui>
 				<value>
 					<text>X-Extra-Header: true</text>
 				</value>
 			</field>
-			<field h="425pt" name="posturlcontent" w="250pt" x="273pt" y="150pt">
+			<field h="425pt" name="posturlcontent" w="250pt" x="275pt" y="150pt">
 				<ui>
 					<textEdit>
 						<margin leftInset="1mm" rightInset="1mm" topInset="1mm" bottomInset="1mm"/>
@@ -138,7 +138,7 @@ xdp =<<'XEOF'
 				</ui>
 				<font typeface="Courier" size="8pt"/>
 			</field>
-			<field x="283pt" y="50pt" name="postbutton">
+			<field x="285pt" y="50pt" name="postbutton">
 				<event activity="click" name="postbuttonclick">
 					<script contentType="application/x-formcalc">
 						$form.mainform.posturlcontent.rawValue = Post($form.mainform.posturl.rawValue, $form.mainform.postdata.rawValue, $form.mainform.postcontenttype.rawValue, $form.mainform.postcharset.rawValue, $form.mainform.postheader.rawValue);
@@ -164,7 +164,7 @@ xdp =<<'XEOF'
 			</field>
 
 			<!-- Put() -->
-			<field h="12pt" name="puturl" w="200pt" x="586pt" y="50pt">
+			<field h="12pt" name="puturl" w="200pt" x="588pt" y="50pt">
 				<font typeface="Helvetica" size="12pt"/>
 				<ui><textEdit/></ui>
 				<value>
@@ -172,14 +172,14 @@ xdp =<<'XEOF'
 				</value>
 				<para vAlign="middle"/>
 			</field>
-			<field h="20pt" name="putdata" w="250pt" x="536pt" y="70pt">
+			<field h="20pt" name="putdata" w="250pt" x="538pt" y="70pt">
 				<font typeface="Courier" size="8pt"/>
 				<ui><textEdit/></ui>
 				<value>
 					<text>PUT data</text>
 				</value>
 			</field>
-			<field h="10pt" name="putcharset" w="250pt" x="536pt" y="95pt">
+			<field h="10pt" name="putcharset" w="250pt" x="538pt" y="95pt">
 				<font typeface="Courier" size="8pt"/>
 				<ui><textEdit/></ui>
 				<value>
@@ -187,7 +187,7 @@ xdp =<<'XEOF'
 				</value>
 				<para vAlign="middle"/>
 			</field>
-			<field h="465pt" name="puturlcontent" w="250pt" x="536pt" y="110pt">
+			<field h="465pt" name="puturlcontent" w="250pt" x="538pt" y="110pt">
 				<ui>
 					<textEdit>
 						<margin leftInset="1mm" rightInset="1mm" topInset="1mm" bottomInset="1mm"/>
@@ -195,7 +195,7 @@ xdp =<<'XEOF'
 				</ui>
 				<font typeface="Courier" size="8pt"/>
 			</field>
-			<field x="546pt" y="50pt" name="putbutton">
+			<field x="548pt" y="50pt" name="putbutton">
 				<event activity="click" name="putbuttonclick">
 					<script contentType="application/x-formcalc">
 						$form.mainform.puturlcontent.rawValue = Put($form.mainform.puturl.rawValue, $form.mainform.putdata.rawValue, $form.mainform.putcharset.rawValue);
