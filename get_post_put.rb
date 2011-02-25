@@ -43,6 +43,7 @@ xdp =<<'XEOF'
 				</value>
 			</draw>
 			<field h="12pt" name="url" w="200pt" x="50pt" y="50pt">
+				<font typeface="Helvetica" size="12pt"/>
 				<ui><textEdit/></ui>
 				<value>
 					<text>http://localhost</text>
@@ -52,7 +53,12 @@ xdp =<<'XEOF'
 				<font typeface="Courier" size="10pt"/>
 			</draw>
 			<field h="400pt" name="urlcontent" w="250pt" x="5pt" y="100pt">
-				<ui><textEdit/></ui>
+				<ui>
+					<textEdit>
+						<margin leftInset="1mm" rightInset="1mm" topInset="1mm" bottomInset="1mm"/>
+					</textEdit>
+				</ui>
+				<font typeface="Helvetica" size="8pt"/>
 			</field>
 			<field x="20pt" y="50pt" name="getbutton">
 				<event activity="click" name="getbuttonclick">
@@ -64,6 +70,8 @@ xdp =<<'XEOF'
 					<button highlight="inverted"/>
 				</ui>
 				<caption>
+				<font typeface="Helvetica" size="12pt"/>
+				<border/>
 				<value>
 					<text>Get</text>
 				</value>
