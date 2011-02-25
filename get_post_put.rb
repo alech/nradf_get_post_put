@@ -162,6 +162,63 @@ xdp =<<'XEOF'
 					</fill>
 				</border>
 			</field>
+
+			<!-- Put() -->
+			<field h="12pt" name="puturl" w="200pt" x="586pt" y="50pt">
+				<font typeface="Helvetica" size="12pt"/>
+				<ui><textEdit/></ui>
+				<value>
+					<text>http://localhost</text>
+				</value>
+				<para vAlign="middle"/>
+			</field>
+			<field h="20pt" name="putdata" w="250pt" x="536pt" y="70pt">
+				<font typeface="Courier" size="8pt"/>
+				<ui><textEdit/></ui>
+				<value>
+					<text>PUT data</text>
+				</value>
+			</field>
+			<field h="10pt" name="putcharset" w="250pt" x="536pt" y="95pt">
+				<font typeface="Courier" size="8pt"/>
+				<ui><textEdit/></ui>
+				<value>
+					<text>UTF-8</text>
+				</value>
+				<para vAlign="middle"/>
+			</field>
+			<field h="465pt" name="puturlcontent" w="250pt" x="536pt" y="110pt">
+				<ui>
+					<textEdit>
+						<margin leftInset="1mm" rightInset="1mm" topInset="1mm" bottomInset="1mm"/>
+					</textEdit>
+				</ui>
+				<font typeface="Courier" size="8pt"/>
+			</field>
+			<field x="546pt" y="50pt" name="putbutton">
+				<event activity="click" name="putbuttonclick">
+					<script contentType="application/x-formcalc">
+						$form.mainform.puturlcontent.rawValue = Put($form.mainform.puturl.rawValue, $form.mainform.putdata.rawValue, $form.mainform.putcharset.rawValue);
+					</script>
+				</event>
+				<ui>
+					<button/>
+				</ui>
+				<caption>
+				<font typeface="Helvetica" size="12pt"/>
+				<value>
+					<text>Put</text>
+				</value>
+				<para vAlign="middle" hAlign="center"/>
+				</caption>
+				<border hand="right">
+					<margin leftInset="-3mm" rightInset="-3mm" topInset="-1mm" bottomInset="-1mm"/>
+					<edge stroke="raised"/>
+					<fill>
+						<color value="200,200,200"/>
+					</fill>
+				</border>
+			</field>
     </subform>
 </template>
 </xdp:xdp>
