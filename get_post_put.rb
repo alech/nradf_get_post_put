@@ -48,14 +48,17 @@ xdp =<<'XEOF'
 					<text>Alexander Klink 2011 ⋅ Public Domain/CC-0 ⋅ http://www.alech.de</text>
 				</value>
 			</draw>
+
+			<!-- Get() -->
 			<field h="12pt" name="geturl" w="200pt" x="60pt" y="50pt">
 				<font typeface="Helvetica" size="12pt"/>
 				<ui><textEdit/></ui>
 				<value>
 					<text>http://localhost</text>
 				</value>
+				<para vAlign="middle"/>
 			</field>
-			<field h="450pt" name="geturlcontent" w="250pt" x="10pt" y="100pt">
+			<field h="505pt" name="geturlcontent" w="250pt" x="10pt" y="70pt">
 				<ui>
 					<textEdit>
 						<margin leftInset="1mm" rightInset="1mm" topInset="1mm" bottomInset="1mm"/>
@@ -76,6 +79,78 @@ xdp =<<'XEOF'
 				<font typeface="Helvetica" size="12pt"/>
 				<value>
 					<text>Get</text>
+				</value>
+				<para vAlign="middle" hAlign="center"/>
+				</caption>
+				<border hand="right">
+					<margin leftInset="-3mm" rightInset="-3mm" topInset="-1mm" bottomInset="-1mm"/>
+					<edge stroke="raised"/>
+					<fill>
+						<color value="200,200,200"/>
+					</fill>
+				</border>
+			</field>
+
+			<!-- Post() -->
+			<field h="12pt" name="posturl" w="200pt" x="323pt" y="50pt">
+				<font typeface="Helvetica" size="12pt"/>
+				<ui><textEdit/></ui>
+				<value>
+					<text>http://localhost</text>
+				</value>
+				<para vAlign="middle"/>
+			</field>
+			<field h="20pt" name="postdata" w="250pt" x="273pt" y="70pt">
+				<font typeface="Courier" size="8pt"/>
+				<ui><textEdit/></ui>
+				<value>
+					<text>POST data</text>
+				</value>
+			</field>
+			<field h="10pt" name="postcontenttype" w="250pt" x="273pt" y="95pt">
+				<font typeface="Courier" size="8pt"/>
+				<ui><textEdit/></ui>
+				<value>
+					<text>application/octet-stream</text>
+				</value>
+				<para vAlign="middle"/>
+			</field>
+			<field h="10pt" name="postcharset" w="250pt" x="273pt" y="110pt">
+				<font typeface="Courier" size="8pt"/>
+				<ui><textEdit/></ui>
+				<value>
+					<text>UTF-8</text>
+				</value>
+				<para vAlign="middle"/>
+			</field>
+			<field h="20pt" name="postheader" w="250pt" x="273pt" y="125pt">
+				<font typeface="Courier" size="8pt"/>
+				<ui><textEdit/></ui>
+				<value>
+					<text>X-Extra-Header: true</text>
+				</value>
+			</field>
+			<field h="425pt" name="posturlcontent" w="250pt" x="273pt" y="150pt">
+				<ui>
+					<textEdit>
+						<margin leftInset="1mm" rightInset="1mm" topInset="1mm" bottomInset="1mm"/>
+					</textEdit>
+				</ui>
+				<font typeface="Courier" size="8pt"/>
+			</field>
+			<field x="283pt" y="50pt" name="postbutton">
+				<event activity="click" name="postbuttonclick">
+					<script contentType="application/x-formcalc">
+						$form.mainform.posturlcontent.rawValue = Post($form.mainform.posturl.rawValue, $form.mainform.postdata.rawValue, $form.mainform.postcontenttype.rawValue, $form.mainform.postcharset.rawValue, $form.mainform.postheader.rawValue);
+					</script>
+				</event>
+				<ui>
+					<button/>
+				</ui>
+				<caption>
+				<font typeface="Helvetica" size="12pt"/>
+				<value>
+					<text>Post</text>
 				</value>
 				<para vAlign="middle" hAlign="center"/>
 				</caption>
