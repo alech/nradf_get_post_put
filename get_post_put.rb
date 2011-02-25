@@ -225,6 +225,11 @@ xdp =<<'XEOF'
 XEOF
 xfa_form = pdf.create_xfa_form(xdp)
 
-page = Page.new(:MediaBox => Rectangle[ :llx => 0, :lly => 0, :urx => WIDTH, :ury => HEIGHT]).setContents(contents)
+page = Page.new(:MediaBox => Rectangle[ :llx => 0,
+                :lly => 0,
+                :urx => WIDTH,
+                :ury => HEIGHT])
+page.setContents(contents)
+
 pdf.append_page(page)
 pdf.save(OUTPUTFILE)
