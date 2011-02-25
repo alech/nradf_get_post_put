@@ -49,9 +49,6 @@ xdp =<<'XEOF'
 					<text>http://localhost</text>
 				</value>
 			</field>
-			<draw x="5pt" y="100pt" name="getcontent">
-				<font typeface="Courier" size="10pt"/>
-			</draw>
 			<field h="400pt" name="urlcontent" w="250pt" x="5pt" y="100pt">
 				<ui>
 					<textEdit>
@@ -67,15 +64,22 @@ xdp =<<'XEOF'
 					</script>
 				</event>
 				<ui>
-					<button highlight="inverted"/>
+					<button/>
 				</ui>
 				<caption>
 				<font typeface="Helvetica" size="12pt"/>
-				<border/>
 				<value>
 					<text>Get</text>
 				</value>
+				<para vAlign="middle" hAlign="center"/>
 				</caption>
+				<border hand="right">
+					<margin leftInset="-3mm" rightInset="-3mm" topInset="-1mm" bottomInset="-1mm"/>
+					<edge stroke="raised"/>
+					<fill>
+						<color value="200,200,255"/>
+					</fill>
+				</border>
 			</field>
     </subform>
 </template>
