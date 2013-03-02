@@ -1,0 +1,5 @@
+NRADF - Not really a document format
+
+This script can be used to create a PoC PDF which includes FormCalc
+to perform arbitrary HTTP requests (GET/POST/PUT). May come in handy
+if everything you have is an Adobe Reader.
